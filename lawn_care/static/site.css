@@ -10,3 +10,9 @@ body {
     margin: 0px;
     padding-bottom: 50px;
 }
+
+.trophy_img {
+    background-color: white;
+    color: #00703c;
+    height: 130px;
+}
