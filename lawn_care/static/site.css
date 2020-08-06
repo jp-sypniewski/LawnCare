@@ -16,3 +16,13 @@ body {
     color: #00703c;
     height: 130px;
 }
+
+.services_title {
+    align-content: center;
+}
+
+.service {
+    background-color: forestgreen;
+    padding: 5px;
+    height: 130px;
+}
