@@ -13,10 +13,5 @@ def register_blueprints():
     app.register_blueprint(home_views.blueprint)
 
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-
 if __name__ == '__main__':
     main()

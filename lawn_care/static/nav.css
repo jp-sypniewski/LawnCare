@@ -1,0 +1,11 @@
+nav {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 20px;
+    color: forestgreen;
+    height: 65px;
+}
+
+nav > a {
+    color: forestgreen;
+}
