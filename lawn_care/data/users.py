@@ -12,4 +12,4 @@ class User(SqlAlchemyBase):
     name = sa.Column(sa.String, nullable=True)
     email = sa.Column(sa.String, unique=True)
     hashed_password = sa.Column(sa.String, unique=True)
-    created_date = sa.Column(sa.DateTime, default=datetime.datetime.now)
+    created_at = sa.Column(sa.DateTime, default=datetime.datetime.now)
