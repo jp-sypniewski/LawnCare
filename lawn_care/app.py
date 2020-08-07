@@ -7,7 +7,7 @@ app = flask.Flask(__name__)
 
 def main():
     register_blueprints()
-    # setup_db()
+    setup_db()
     app.run()
 
 
