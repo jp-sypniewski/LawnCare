@@ -14,7 +14,11 @@ body {
 .trophy_img {
     background-color: white;
     color: #00703c;
-    height: 130px;
+    height: auto;
+}
+
+.main_image {
+    width: 100%;
 }
 
 .services_title {
