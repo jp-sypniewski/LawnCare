@@ -4,11 +4,20 @@ body {
     padding: 0px;
     font-size: 17px;
     background-color: #00703c;
+    font-family: 'Antic Slab', serif;
 }
 
 .main_content {
     margin: 0px;
     padding-bottom: 50px;
+}
+
+.company_header {
+    padding: 10px;
+}
+
+.company_header > h1 {
+    padding: 10px;
 }
 
 .trophy_img {
@@ -21,12 +30,28 @@ body {
     width: 100%;
 }
 
+.all_services {
+    padding: 10px;
+}
+
 .services_title {
     align-content: center;
 }
 
 .service {
+    border: 1px solid goldenrod;
     background-color: forestgreen;
-    padding: 5px;
+    padding: 10px;
     height: 130px;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+}
+
+footer > a {
+    color: forestgreen;
 }

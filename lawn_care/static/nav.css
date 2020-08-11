@@ -1,11 +1,17 @@
 nav {
-    background-color: #eee;
+    background-color: #fefefe;
     padding: 10px;
     font-size: 20px;
     color: forestgreen;
     height: 65px;
 }
 
-nav > a {
+.nav-link {
     color: forestgreen;
+}
+
+.nav-expand-line {
+    height: 2px;
+    margin: 6px;
+    background-color: forestgreen;
 }
