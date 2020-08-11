@@ -6,6 +6,10 @@ nav {
     height: 65px;
 }
 
+.navbar-brand {
+    color: forestgreen;
+}
+
 .nav-link {
     color: forestgreen;
 }
