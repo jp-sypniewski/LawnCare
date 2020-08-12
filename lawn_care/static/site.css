@@ -17,7 +17,7 @@ body {
 }
 
 .company_header > h1 {
-    padding: 10px;
+    padding: 15px;
 }
 
 .trophy_img {
@@ -37,6 +37,10 @@ body {
     padding: 15px;
 }
 
+.promise_title {
+    padding-left: 20px;
+}
+
 .promise_content {
     margin-left: auto;
     margin-right: auto;
@@ -45,6 +49,10 @@ body {
 
 .all_services {
     padding: 10px;
+}
+
+.services_title {
+    padding-left: 20px;
 }
 
 .service {
@@ -61,6 +69,6 @@ footer {
     margin-top: 40px;
 }
 
-footer > a {
+footer > div > a {
     color: forestgreen;
 }
