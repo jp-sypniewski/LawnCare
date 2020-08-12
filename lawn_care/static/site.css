@@ -30,12 +30,21 @@ body {
     width: 100%;
 }
 
-.all_services {
-    padding: 10px;
+.promise {
+    width: 100%;
+    background-color: white;
+    color: forestgreen;
+    padding: 15px;
 }
 
-.services_title {
-    align-content: center;
+.promise_content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+
+.all_services {
+    padding: 10px;
 }
 
 .service {
