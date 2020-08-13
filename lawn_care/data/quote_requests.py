@@ -14,4 +14,5 @@ class QuoteRequest(SqlAlchemyBase):
     dttm_requested = sa.Column(sa.DateTime)
     contact_phone = sa.Column(sa.String, nullable=True)
     contact_email = sa.Column(sa.String, nullable=True)
+    preference_contact = sa.Column(sa.String)
     completed = sa.Column(sa.Boolean)
