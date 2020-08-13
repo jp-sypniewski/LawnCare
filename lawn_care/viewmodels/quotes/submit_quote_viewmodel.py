@@ -1,7 +1,7 @@
 from lawn_care.viewmodels.shared.viewmodelbase import ViewModelBase
 
 
-class SubmitQuoteViewModel(ViewModelBase):
+class QuoteRequestViewModel(ViewModelBase):
     def __init__(self):
         super().__init__()
         self.requester_name = self.request_dict.requester_name
