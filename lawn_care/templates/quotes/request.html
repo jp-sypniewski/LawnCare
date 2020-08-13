@@ -1,7 +1,21 @@
 {% extends 'shared/_layout.html' %}
 {% block main_content %}
-    <h2>Quote Request Form</h2>
-    <form action="">
-
-    </form>
+    <br>
+    <div class="form_container">
+        <form action="" method="POST" class="quote_request_form">
+            <h2>Quote Request Form</h2>
+            <input name="requester_name" type="text" placeholder=" Your name" class="form-control"
+                   value="{{ requester_name }}" required>
+            <input name="dttm_requested" type="text" placeholder=" Requested appointment date and time"
+                   class="form-control" value="{{ dttm_requested }}" required>
+            <input name="contact_phone" type="text" placeholder=" Phone number" class="form-control"
+                   value="{{ contact_phone }}" required>
+            <input name="contact_email" type="text" placeholder=" Email address" class="form-control"
+                   value="{{ contact_email }}" required>
+            <input name="preference_contact" type="text" placeholder=" Preference Phone/Email" class="form-control"
+                   value="{{ preference_contact }}" required>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+    <br>
 {% endblock %}
