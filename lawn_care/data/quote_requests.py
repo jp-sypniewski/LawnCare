@@ -10,8 +10,8 @@ class QuoteRequest(SqlAlchemyBase):
 
     id = sa.Column(sa.Integer, primary_key=True, autoincrement=True)
     created_at = sa.Column(sa.DateTime, default=datetime.datetime.now)
-    username = sa.Column(sa.String)
+    requester_name = sa.Column(sa.String)
     dttm_requested = sa.Column(sa.DateTime)
-    contact_phone = sa.Column(sa.String)
-    contact_email = sa.Column(sa.String)
+    contact_phone = sa.Column(sa.String, nullable=True)
+    contact_email = sa.Column(sa.String, nullable=True)
     completed = sa.Column(sa.Boolean)
