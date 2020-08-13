@@ -49,7 +49,6 @@ def login_user(email, password) -> Optional[User]:
     session = db_session.create_session()
 
     user = session.query(User).filter(User.email == email).first()
-
     if not user:
         return None
 
