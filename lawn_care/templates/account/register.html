@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'shared/_layout.html' %}
 
-</body>
-</html>
+{% block main_content %}
+    <form action="">
+        <h2>Sign Up</h2>
+        <input name="username" type="text" placeholder=" Username" class="form-control"
+               value="{{ username }}" required>
+        <input name="password" type="password" placeholder=" Password" class="form-control"
+               value="{{ password }}" required>
+        <input name="email" type="email" placeholder=" Email address" class="form-control"
+               value="{{ email }}" required>
+        <input name="first_name" type="text" placeholder=" First name" class="form-control"
+               value="{{ first_name }}" required>
+        <input name="last_name" type="text" placeholder=" Last name" class="form-control"
+               value="{{ last_name }}" required>
+    </form>
+{% endblock %}

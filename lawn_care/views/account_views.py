@@ -8,6 +8,16 @@ def account():
     return flask.render_template('account/account.html')
 
 
+@blueprint.route('/account/register', methods=['GET'])
+def register_get():
+    return flask.render_template('account/register.html')
+
+
+@blueprint.route('/account/register', methods=['POST'])
+def register_post():
+    return flask.render_template('account/register.html')
+
+
 @blueprint.route('/account/login', methods=['GET'])
 def login_get():
     return flask.render_template('account/login.html')
