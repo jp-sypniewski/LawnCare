@@ -1,7 +1,7 @@
 {% extends 'shared/_layout.html' %}
 {% block main_content %}
     <br>
-    <div class="form_container">
+    <div class="container form_container">
         <form action="" method="POST" class="quote_request_form">
             <h2>Quote Request Form</h2>
             <input name="requester_name" type="text" placeholder=" Your name" class="form-control"
@@ -16,6 +16,12 @@
                    value="{{ preference_contact }}" required>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
+
+        {% if error %}
+            <div class="error-msg">
+                {{ error }}
+            </div>
+        {% endif %}
     </div>
     <br>
 {% endblock %}

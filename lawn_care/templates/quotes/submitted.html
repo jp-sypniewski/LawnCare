@@ -1,0 +1,16 @@
+{% extends 'shared/_layout.html' %}
+{% block main_content %}
+    <div class="container submission-response">
+        <h2>Thank you for submitting a quote request!</h2>
+        <br>
+        <p>We will be in touch with you soon. We look forward to understanding your needs!</p>
+        <hr>
+        <div class="submission-info">
+            <p>Your name: {{ requester_name }}</p>
+            <p>Requested Appointment: {{ dttm_requested }}</p>
+            <p>Phone: {{ contact_phone }}</p>
+            <p>Email: {{ contact_email }}</p>
+            <p>Preference: {{ preference_contact }}</p>
+        </div>
+    </div>
+{% endblock %}

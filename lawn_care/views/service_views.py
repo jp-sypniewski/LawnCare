@@ -28,11 +28,12 @@ def post_quote_request():
         vm.contact_email,
         vm.preference_contact
     )
+    print()
     if not quote:
         vm.error = 'Your quote request could not be created.'
         return flask.render_template('quotes/request.html', **vm.to_dict())
 
-    return flask.render_template('quotes/request.html', **vm.to_dict())
+    return flask.render_template('quotes/submitted.html', **vm.to_dict())
 
 
 @blueprint.route('/services/<service_name>')

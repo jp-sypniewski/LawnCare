@@ -29,10 +29,13 @@ def add_quote_request(requester_name: str,
 
     session = db_session.create_session()
 
-    session.add(new_quote)
-    session.commit()
+    try:
+        session.add(new_quote)
+        session.commit()
+    finally:
+        session.close()
 
-    return None
+    return new_quote
 
 
 def update_quote_request(input: QuoteRequest) -> QuoteRequest:
