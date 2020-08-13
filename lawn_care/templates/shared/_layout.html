@@ -40,9 +40,13 @@
             <li class="nav-item"><a class="nav-link" href="/request">Request a Quote</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
 
-
-            <li class="nav-item"><a class="nav-link" href="/account/login">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="/account/register" id="last_nav_link">Register</a></li>
+            {% if user_id %}
+                <li class="nav-item"><a class="nav-link" href="/account">Account</a></li>
+                <li class="nav-item"><a class="nav-link" href="/account/logout" id="last_nav_link">Logout</a></li>
+            {% else %}
+                <li class="nav-item"><a class="nav-link" href="/account/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/account/register" id="last_nav_link">Register</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
@@ -56,7 +60,8 @@
     <div>
         LawnCare Services<br>
         Raleigh NC<br><br>
-        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a><br><br>
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a><br><br>
         Copyright &copy; <a href="">MC</a>
     </div>
 </footer>

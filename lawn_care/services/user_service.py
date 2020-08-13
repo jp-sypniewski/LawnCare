@@ -24,6 +24,8 @@ def create_user(username: str,
     new_user.first_name = first_name
     new_user.last_name = last_name
 
+    new_user.account_type = 'user'
+
     session = db_session.create_session()
     try:
         session.add(new_user)
