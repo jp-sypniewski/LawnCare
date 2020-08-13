@@ -22,14 +22,16 @@ DROP TABLE IF EXISTS `users` ;
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(128) NULL,
+  `username` VARCHAR(128) NOT NULL,
   `email` VARCHAR(256) NOT NULL,
   `hashed_password` VARCHAR(256) NOT NULL,
   `created_at` DATETIME NOT NULL,
-  PRIMARY KEY (`id`))
+  `first_name` VARCHAR(128) NULL,
+  `last_name` VARCHAR(128) NULL,
+  `account_type` ENUM('user', 'admin') NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC))
 ENGINE = InnoDB;
-
-CREATE UNIQUE INDEX `email_UNIQUE` ON `users` (`email` ASC);
 
 
 -- -----------------------------------------------------
@@ -41,10 +43,31 @@ CREATE TABLE IF NOT EXISTS `services` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(128) NOT NULL,
   `category` VARCHAR(64) NOT NULL,
-  PRIMARY KEY (`id`))
+  `quick_description` VARCHAR(512) NOT NULL,
+  `extended_description` VARCHAR(2048) NOT NULL,
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC))
 ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX `name_UNIQUE` ON `services` (`name` ASC);
+
+-- -----------------------------------------------------
+-- Table `quote_requests`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `quote_requests` ;
+
+CREATE TABLE IF NOT EXISTS `quote_requests` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `created_at` DATETIME NOT NULL,
+  `requester_name` VARCHAR(256) NOT NULL,
+  `dttm_requested` VARCHAR(512) NOT NULL,
+  `contact_phone` VARCHAR(45) NULL,
+  `contact_email` VARCHAR(45) NULL,
+  `preference_contact` VARCHAR(45) NOT NULL,
+  `completed` TINYINT NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
 
 SET SQL_MODE = '';
 DROP USER IF EXISTS username;
@@ -56,16 +79,3 @@ GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'username';
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
--- -----------------------------------------------------
--- Data for table `services`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `lawncare`;
-INSERT INTO `services` (`id`, `name`, `category`) VALUES (1, 'mow lawn', 'lawn care');
-INSERT INTO `services` (`id`, `name`, `category`) VALUES (2, 'fertilize', 'lawn care');
-INSERT INTO `services` (`id`, `name`, `category`) VALUES (3, 'flea and tick control', 'weed/pest control');
-INSERT INTO `services` (`id`, `name`, `category`) VALUES (4, 'fetching the finest shrubbery', 'landscaping');
-
-COMMIT;
-

@@ -25,6 +25,8 @@ def add_quote_request(requester_name: str,
     new_quote.contact_email = contact_email
     new_quote.preference_contact = preference_contact
 
+    new_quote.completed = False
+
     session = db_session.create_session()
 
     session.add(new_quote)

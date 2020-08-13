@@ -9,7 +9,7 @@ blueprint = flask.Blueprint('service', __name__, template_folder='templates')
 @blueprint.route('/request', methods=['GET'])
 def get_quote_request():
     vm = QuoteRequestViewModel()
-    return flask.render_template('quotes/request.html', vm.to_dict())
+    return flask.render_template('quotes/request.html', **vm.to_dict())
 
 
 @blueprint.route('/request', methods=['POST'])
@@ -18,8 +18,8 @@ def post_quote_request():
 
     vm.validate()
 
-    if vm.error():
-        return flask.render_template('quotes/request.html', vm.to_dict())
+    if vm.error:
+        return flask.render_template('quotes/request.html', **vm.to_dict())
 
     quote = quote_service.add_quote_request(
         vm.requester_name,
@@ -30,9 +30,9 @@ def post_quote_request():
     )
     if not quote:
         vm.error = 'Your quote request could not be created.'
-        return flask.render_template('quotes/request.html', vm.to_dict())
+        return flask.render_template('quotes/request.html', **vm.to_dict())
 
-    return flask.render_template('quotes/request.html', vm.to_dict())
+    return flask.render_template('quotes/request.html', **vm.to_dict())
 
 
 @blueprint.route('/services/<service_name>')
